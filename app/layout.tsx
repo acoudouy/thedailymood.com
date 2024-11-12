@@ -1,16 +1,12 @@
 'use client'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
-import '../components/style/style.css'
-import 'react-resizable/css/styles.css'
-// import { CSPostHogProvider } from './provider'
+// import './globals.css'
+// import '../components/style/style.css'
 
 import StoreProvider from './StoreProvider'
 import dynamic from 'next/dynamic'
-import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
-// const CrispWithNoSSR = dynamic(() => import('../components/crisp-js'), { ssr: false })
 const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata: Metadata = {
@@ -28,7 +24,7 @@ export default function RootLayout({
       {/* <CrispWithNoSSR /> */}
       <body className={inter.className}>
         {/* <CSPostHogProvider> */}
-          <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>{children}</StoreProvider>
         {/* </CSPostHogProvider> */}
       </body>
     </html>

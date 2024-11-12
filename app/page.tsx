@@ -1,13 +1,7 @@
 import { Metadata } from 'next'
 import { domain, projectName, shortDescription, tagline } from '../env'
-import HeroLandingPage from '../components/hero/index'
-import { Footer } from '../components/Footer'
-import BannerAppLandingPage from '../components/bannerAppLandingPage'
-import StepsToCreateVideoBanner from '../components/stepsToCreateVideoBanner'
-import CustomerFeedbackSliderLanding from '../components/customerFeedbackSlider'
-import VideoShowcaseBannerLandingPage from '../components/videoShowcaseLanding'
-import BannerCtaEndLandingPage from '../components/bannerCtaEndLandingPage'
-import PricingBannerLandingPage from '../components/pricingBanner'
+import AnimatedSunsetHero from '../components/heroSunset'
+import '../app/globals.css'
 
 //  https://nextjs.org/docs/app/api-reference/functions/generate-metadata#robots
 export const metadata: Metadata = {
@@ -75,17 +69,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
-      <div className="flex min-h-screen max-w-[100vw] overflow-hidden flex-col items-center justify-between bg-m-black ">
-        <HeroLandingPage />
-        <BannerAppLandingPage />
-        <StepsToCreateVideoBanner />
-        <CustomerFeedbackSliderLanding />
-        <VideoShowcaseBannerLandingPage />
-        <PricingBannerLandingPage />
-        <BannerCtaEndLandingPage />
-      </div>
-      <Footer isBgBlack={true} />
-    </>
+    <div className="bg-m-black min-h-screen h-[200dvh]">
+      {/* <div className="flex min-h-screen max-w-[100vw] overflow-hidden flex-col items-center justify-between bg-m-black"> */}
+      {/* <main className="flex flex-col items-center justify-center flex-1 px-4 py-20"> */}
+      <AnimatedSunsetHero />
+      {/* </main> */}
+      {/* </div> */}
+    </div>
   )
 }

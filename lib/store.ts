@@ -14,15 +14,8 @@ import {
   REGISTER,
 } from 'redux-persist'
 
-import clips from './reducers/clips'
-import media from './reducers/media'
-import project from './reducers/project'
 import user from './reducers/user'
-import storage from './storage'
-import videoFormReducer from './reducers/videoFormSlice'
-import sceneReducer, { scenesSlice } from './reducers/scenes'
-import activeElement from './reducers/activeElement'
-import menuReducer from './reducers/menuSlice' // Import the menuSlice reducer
+import storage from './storage.ts'
 
 const persistConfig = {
   key: 'root',
@@ -30,27 +23,8 @@ const persistConfig = {
   whitelist: ['authState', 'user', 'scenes', 'videoForm', 'project'],
 }
 
-function isActionIgnored(action: Action) {
-  return action.type === scenesSlice.actions.updateSceneDetails.type
-}
-
-const undoableScenesReducer = undoable(sceneReducer, {
-  filter: excludeAction([
-    scenesSlice.actions.updateSceneOrder.type,
-    scenesSlice.actions.updateSceneDetails.type,
-    scenesSlice.actions.addScene.type,
-  ]),
-})
-
 const rootReducer = combineReducers({
   user,
-  scenes: undoableScenesReducer,
-  videoForm: videoFormReducer,
-  project,
-  clips,
-  media,
-  activeElement,
-  menu: menuReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -7,6 +7,14 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['ui-sans-serif', 'system-ui', 'serif'],
+      serif: ['ui-serif', 'Georgia', 'serif'],
+      mono: ['ui-monospace', 'SFMono-Regular', 'serif'],
+      merriweather: ['Merriweather', 'serif'],
+      nunito: ['Nunito Sans', 'serif'],
+      raleway: ['Raleway', 'serif'],
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
