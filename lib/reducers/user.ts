@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../store' // Assuming the RootState is defined in the store file
-import { ProjectState } from '../types/projectTypes'
 
 export interface Font {
   id: number
