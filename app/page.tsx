@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import { domain, projectName, shortDescription, tagline } from '../env'
 import AnimatedSunsetHero from '../components/heroSunset'
 import '../app/globals.css'
+import DownloadSection from '@/components/downloadSection'
+import Footer from '@/components/footer'
 
 //  https://nextjs.org/docs/app/api-reference/functions/generate-metadata#robots
 export const metadata: Metadata = {
@@ -69,11 +71,13 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="bg-m-black min-h-screen h-[200dvh]">
+    <div className="bg-m-black min-h-screen ">
       {/* <div className="flex min-h-screen max-w-[100vw] overflow-hidden flex-col items-center justify-between bg-m-black"> */}
-      {/* <main className="flex flex-col items-center justify-center flex-1 px-4 py-20"> */}
-      <AnimatedSunsetHero />
-      {/* </main> */}
+      <main className="">
+        <AnimatedSunsetHero />
+        <DownloadSection />
+      </main>
+      <Footer />
       {/* </div> */}
     </div>
   )
