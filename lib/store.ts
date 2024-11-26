@@ -15,7 +15,7 @@ import {
 } from 'redux-persist'
 
 import user from './reducers/user'
-import storage from './storage.ts'
+import storage from './storage'
 
 const persistConfig = {
   key: 'root',
